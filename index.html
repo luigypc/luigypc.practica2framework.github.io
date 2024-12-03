@@ -1,0 +1,462 @@
+<html>
+
+<head>
+    <title>Práctica de Framework Bootstrap</title>
+
+    <!-- En este caso he elegido usar el CDN de Bootstrap
+     esto me facilita no tener que descargar los ficheros,
+     documentacion https://getbootstrap.com/docs/5.3/getting-started/download/ 
+      -->
+  
+    <!-- Estilos CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Antendiendo a los comentario de la practica 1 , voy a intentar 
+        mejorar la aperiencia visual:*/    
+
+        /* Fondo degradado */
+
+        body {
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+        }
+
+        /* Sombras y espaciados comunes */
+        .shadow-lg {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Pie de página personalizado */
+        footer {
+            border-top: 2px solid #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ficheros JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Cabecera -->
+    <header id="inicio" class="bg-primary text-white text-center py-3">
+        <!-- Añadimos el ID 'inicio' para que el botón pueda desplazarse aquí -->
+        <h1>Práctica Desarrollo de Aplicaciones en Red</h1>
+    </header>
+
+
+    <!-- Menú de navegación, utilizo las clases navbar para el menu  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#inicio"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> <!-- en este caso quiero los elementos centrados con justify-content-center-->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary me-2" href="#entrada1">¿Qué es Bootstrap?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary me-2" href="#entrada2">Instalación de Bootstrap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success me-2" href="#entrada3">Primeros pasos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-info me-2" href="#entrada4">Utilización</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-warning me-2" href="#entrada5">Funcionamiento del framework</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger" href="#entrada6">Conclusiones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Contenido principal -->
+    <main class="container my-4">
+
+        <!-- Introducción -->
+        <div class="alert alert-info border rounded p-4">
+            <!-- Utilizando alert para crear un recuadro con estilo -->
+            <p class="mb-0">
+                <strong>Nota:</strong> En la práctica 2, he utilizado como base el código HTML y CSS desarrollado en la práctica 1. 
+                Esto me ha permitido explorar y aplicar las funcionalidades de Bootstrap, aprovechando su sistema de cuadrícula 
+                responsiva, componentes predefinidos y utilidades CSS para optimizar el diseño y la presentación del proyecto.
+                El desarrollo es mucho más rápido , responsivo y visual que utilzando solo las tecnologías de la práctica 1.
+            </p>
+            
+        </div>
+
+        <!-- Entrada 1 -->
+         <br>
+        <section id="entrada1" class="mb-4 p-3 bg-light border rounded">
+            <h2>¿Qué es Bootstrap?</h2> <p>Bootstrap es un framework de front-end diseñado para facilitar
+                la creación de sitios web y aplicaciones responsivas. Este framework fué creado en un principio por
+                desarrolladores de la <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank">plataforma 'X' en el año 2011.</a>
+                Se utiliza principalmente en el diseño de interfaces de usuario para sitios web, dashboards y aplicaciones móviles.
+                Su funcionamiento se basa en lenguajes fundamentales como HTML, CSS y JavaScript
+               , y requiere como prerrequisitos conocimientos básicos de estos lenguajes y el uso de un navegador moderno, 
+               ya que hay que relacionar sus scripts y hojas de estilo en la cabecera del código HTML .</p>
+        </section>
+
+        <!-- Entrada 2 -->
+        <br>
+        <section id="entrada2" class="mb-4 p-3 bg-light border rounded">
+            <h2>Instalación de Bootstrap</h2>
+            <div class="row">
+                <div class="col-md-7">
+                    <p>
+                        Bootstrap no requiere necesariamente una instalación, ya que puede utilizarse directamente a través de enlaces CDN para incluir los archivos CSS y JavaScript en el proyecto. 
+                        Sin embargo, para proyectos más complejos, se recomienda instalarlo mediante un gestor de paquetes como npm. 
+                        Los pasos incluyen descargar los archivos desde la página oficial de Bootstrap o añadir los enlaces CDN en el 
+                        <code>&lt;head&gt;</code> para CSS y antes del cierre del <code>&lt;body&gt;</code> para JavaScript. 
+                        Es importante asegurarse de usar una versión compatible con las necesidades del proyecto, como la más reciente, Bootstrap 5. 
+                        En cuanto a las rutas, deben apuntar correctamente al archivo CSS y JavaScript, y no requiere configuración de variables de entorno ni base de datos, 
+                        ya que es un framework de front-end centrado en el diseño y la experiencia del usuario.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="imagenes/CDN_bootstrapinstall.png" alt="CDN via jsDelivr" class="img-fluid rounded" style="max-width: 100%; height: auto; width: 120%;">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Código para el uso del CDN Bootstrap-->
+               
+              <p><a href="#inicio" class="btn btn-secondary btn-sm" data-bs-scroll="true">Volver al inicio</a></p>
+        </section>
+
+        <!-- Entrada 3 -->
+
+        <section id="entrada3" class="mb-4 p-3 bg-light border rounded">
+            <h2>Primeros pasos</h2>
+            <p>Para comenzar, crea un archivo HTML básico e incluye los enlaces CDN de Bootstrap. Usa una estructura simple como un encabezado y un contenedor con clases Bootstrap.</p>
+            <!-- Código para el uso del CDN -->
+<h3 class="fs-4">Uso del CDN en HTML:</h3>
+
+<pre class="bg-light p-3 border rounded">
+    <code>
+        &lt;html&gt;
+        &lt;head&gt;
+                    &lt;title&gt;Mi Proyecto Bootstrap&lt;/title&gt;
+            &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+                  rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+                  crossorigin="anonymous"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+                    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+                    crossorigin="anonymous"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code>
+</pre>
+
+<section id="ejemplo-uso-bootstrap" class="mb-4 p-3 bg-light border rounded">
+    <h2 class="fs-4 text-primary">Ejemplo práctico con Bootstrap</h2>
+    <p>En este ejemplo, se utilizo Bootstrap para crear un encabezado destacado,
+     un botón mas estilizado y una tabla con formato. Esto demuestra la flexibilidad del framework,
+    facilitando mucho el trabajo si tuvisemos que hacer lo mismo con HTML y CSS. </p>
+
+    <!-- Botón con estilos de Bootstrap y JavaScript -->
+        <p>En este ejemplo, el botón mostrará un mensaje de "Hola Practica 2" al hacer clic,
+           para ello utilzamos javascript</p>
+    
+        <!-- Botón utilizando las clases css , basicamente utilizamos la clases css 
+         de bootstrap boton , el color verde es por el uso de la clase btn-success y la
+         clase mb-3 margin-bottom que básicamente añade un espacio debajo del boton para poner
+         otros elementos -->
+
+        <button class="btn btn-success mb-3" onclick="MuestraMensaje()">Haz clic aquí</button>
+        
+        <!-- Contenedor para el mensaje de Hola practica 2 -->
+        <div id="texto_mensaje" class="alert alert-info mt-3 d-none" role="alert">
+            ¡Hola Practica 2!
+        </div>
+    
+    <!-- Ejemplo utilizando javascript-->
+    <script>
+        // Función para mostrar el mensaje con javascript
+        function MuestraMensaje() {
+            const mensajeDiv = document.getElementById('texto_mensaje');
+            mensajeDiv.classList.remove('d-none'); // Muestra el mensaje
+        }
+    </script>
+              
+        <!-- Tabla estilizada con Bootstrap -->
+        <h2 class="fs-4 text-primary">Ejemplo práctico clase table</h2>
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Elemento Bootstrap</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><code>table</code></td>
+                    <td>Clase base que aplica estilos predefinidos a las tablas, incluyendo bordes, espaciado y alineación.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><code>table-striped</code></td>
+                    <td>Añade un efecto de rayas alternas en las filas para mejorar la legibilidad.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><code>table-bordered</code></td>
+                    <td>Añade bordes visibles a todas las celdas de la tabla.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><code>table-dark</code></td>
+                    <td>Aplica un fondo oscuro y texto claro al encabezado de la tabla para resaltar su contenido.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+               <p><a href="#inicio" class="btn btn-secondary btn-sm" data-bs-scroll="true">Volver al inicio</a></p>
+        </section>
+
+     <!-- Entrada 4 -->
+<section id="entrada4" class="mb-4 p-3 bg-light border rounded">
+    <h2>Como Utilizar Bootstrap</h2>
+    
+    <!-- Introducción -->
+    <p>
+        <strong>Introducción:</strong> 
+    A continuación vamos a ver algun ejemplo de elementos predefinidos
+    que podemos utlizar con Bootstap.
+    </p>
+    
+    <!-- Cómo empezar -->
+    <p>
+        <strong>¿Cómo empezar?</strong> 
+        Para empezar, primero incluye los enlaces CSS y JavaScript de Bootstrap en tu archivo HTML, tal como
+        vimos en el articulo "Introducción de bootstrap".
+        Esto puede hacerse usando un CDN o descargando los archivos necesarios.
+        Una vez configurado, puedes utilizar las clases predefinidas que Bootstrap ofrece, como las de botones, barras de navegación, rejillas, formularios y más. Estas clases simplifican el diseño y la funcionalidad sin necesidad de escribir CSS o JavaScript personalizados.
+    </p>
+    
+    <!-- Sistema de rejillas -->
+    <p>
+        <strong>Sistema de rejillas:</strong> Una de las características principales de Bootstrap es su sistema de cuadrícula basado en flexbox. Este sistema te permite dividir tu página en filas y columnas para crear diseños responsivos. Por ejemplo:
+    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 bg-primary text-white text-center p-3">Columna 1</div>
+            <div class="col-md-6 bg-secondary text-white text-center p-3">Columna 2</div>
+        </div>
+    </div>
+
+    <!-- Componentes predefinidos -->
+    <p>
+        <strong>Componentes predefinidos:</strong> Bootstrap incluye una amplia variedad de componentes, como botones, formularios, modales, alertas y menús desplegables. Estos componentes se integran fácilmente añadiendo clases específicas a tus elementos HTML. A continuación, algunos ejemplos:
+    </p>
+    
+        <!-- Ejemplo de barra de navegación -->
+    <br>
+    <p><strong>Barra de navegación de ejemplo:</strong></p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mi Marca</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Deshabilitado</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Visualización -->
+    <p>
+        <strong>¿Cómo visualizar los resultados?</strong> 
+        Una vez que hayas incluido el código necesario, guarda tu archivo HTML. Para visualizar los cambios, simplemente ábrelo en cualquier navegador web. Si estás utilizando un servidor local (por ejemplo, con extensiones como Live Server en VS Code), podrás ver los cambios en tiempo real mientras editas el código.
+    </p>
+    
+    <!-- Volver al inicio -->
+    <p>
+        <a href="#inicio" class="btn btn-secondary btn-sm" data-bs-scroll="true">Volver al inicio</a>
+    </p>
+</section>
+
+       <!-- Entrada 5 -->
+<section id="entrada5" class="mb-4 p-3 bg-light border rounded">
+    <h2>Como funciona el framework</h2>
+
+    <!-- Introducción -->
+    <p>
+        <strong>¿Qué es Bootstrap técnicamente?</strong> Bootstrap es un framework CSS que combina clases predefinidas y componentes interactivos, diseñados para facilitar la creación de interfaces responsivas y atractivas. Funciona mediante la inclusión de un archivo CSS y un archivo JavaScript que puedes añadir desde un CDN o instalándolos localmente. 
+    </p>
+
+    <!-- Funcionamiento -->
+    <p>
+        <strong>¿Cómo actúa?</strong> 
+        Bootstrap aplica estilos mediante clases CSS predefinidas que ya contienen las propiedades necesarias para dar formato a elementos como botones, cuadros de texto y estructuras de diseño. Además, utiliza JavaScript para proporcionar comportamientos interactivos como modales, barras de navegación colapsables y alertas con cierres automáticos. Por ejemplo:
+    </p>
+
+    <!-- Ejemplo de interacción: Modal -->
+    <div>
+        <p><strong>Ejemplo práctico:</strong> Un modal que muestra información adicional al hacer clic en un botón.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Abrir modal
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ejemplo de Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Este es un ejemplo práctico de un modal en Bootstrap. Puedes usarlo para mostrar contenido dinámico.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sistema de rejillas -->
+    <p>
+        <br>
+        <strong>¿Cómo funciona el sistema de cuadrícula de Bootstrap?</strong>
+        El sistema de cuadrícula de Bootstrap divide la pantalla en 12 columnas, lo que permite crear diseños responsivos mediante el uso de contenedores,
+        filas y columnas:
+    </p>
+    <ul>
+        <li><strong>Contenedores:</strong> Envoltorios para filas y columnas. Pueden ser fluidos o de ancho fijo.</li>
+        <li><strong>Filas:</strong> Alinean columnas horizontalmente.</li>
+        <li><strong>Columnas:</strong> Especificadas mediante clases como <code>.col-6</code>, indican cuántas columnas ocupa un elemento.</li>
+    </ul>
+    <p>
+        Bootstrap permite ajustar estas columnas según el dispositivo con clases como <code>.col-md-6</code>, asegurando que el diseño sea adaptativo. Por ejemplo, puedes usar seis columnas para una imagen y otras seis para texto, logrando una distribución uniforme.
+    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img src="https://via.placeholder.com/150" alt="Imagen ejemplo" class="img-fluid">
+            </div>
+            <div class="col-6">
+                <p>Texto ejemplo al lado de una imagen en una distribución 50/50.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modificación -->
+     <br>
+    <p>
+        <strong>¿Cómo modificarlo?</strong> 
+        Si necesitamos personalizar los estilos, se puede hacer sobrescribiendo las clases de Bootstrap en un archivo CSS adicional o mediante el uso de variables personalizadas de Sass.
+        Esto permite ajustar colores, tipografías o incluso redefinir el comportamiento de ciertos componentes.
+    </p>
+    <div>
+        <p><strong>Ejemplo práctico:</strong> Personalizar un botón.</p>
+        <p>Este botón utiliza una clase personalizada para cambiar el color
+           cuando le pasamos por encima:</p>
+        <button class="btn btn-custom">Botón personalizado</button>
+        <style>
+            .btn-custom {
+                background-color: #6c757d;
+                color: white;
+                border: 2px solid #495057;
+            }
+            .btn-custom:hover {
+                background-color: #495057;
+                border-color: #343a40;
+            }
+        </style>
+    </div>
+
+    <!-- Integración -->
+    <p>
+        <br>
+        <strong>¿Se puede integrar con otras aplicaciones?</strong> 
+        Sí, Bootstrap es completamente compatible con cualquier entorno que soporte HTML, CSS y JavaScript.
+        Esto incluye frameworks como Angular, React o Vue, y plataformas como WordPress.
+        Además, gracias a su diseño modular, puedes usar solo las partes del framework que necesites.
+    </p>
+
+    <!-- Ejemplo de integración -->
+     <br>
+    <div>
+        <p><strong>Ejemplo práctico:</strong> Barra de navegación responsiva.</p>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Mi Aplicación</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Funcionalidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Navegación -->
+    <p>
+        <a href="#inicio" class="btn btn-secondary btn-sm" data-bs-scroll="true">Volver al inicio</a>
+    </p>
+</section>
+
+      
+
+       <!-- Entrada 6 -->
+     <section id="entrada6" class="mb-4 p-3 bg-light border rounded">
+        <h2>Conclusiones</h2>
+        <p> Para mi bootstrap se consolida como un framework versátil y eficiente, ideal para desarrollar sitios web 
+            responsivos gracias a sus componentes predefinidos y su compatibilidad con una amplia variedad 
+            de dispositivos y navegadores. Su facilidad de uso, basada en tecnologías estándar como
+            HTML, CSS y JavaScript, junto con la posibilidad de integración mediante un CDN, 
+            reduce significativamente los tiempos de desarrollo al eliminar la necesidad de 
+            instalar archivos localmente, mejorando la velocidad de carga y facilitando las actualizaciones.
+            Además, el soporte de atributos de seguridad como `integrity` y `crossorigin` garantiza la 
+            autenticidad de los recursos, proporcionando una solución segura y moderna para el diseño web.
+            Como conclusión esta actividad destaco el ahorro de tiempo y la profesionalización 
+            que Bootstrap aporta, especialmente al reutilizar conocimientos básicos adquiridos en temas
+            previos, si tuvise que pensar en algún aspecto menos práctico, se me ocurre que puede llegar
+            a ser un poco tedioso la configuracion de las correctas cabeceras CSP que deberían implementarse
+            en el servidor web que contiene la página, ya que hay que contar con permitir los orígenes correctos
+            del Framework.</p>
+            <p><a href="#inicio" class="btn btn-secondary btn-sm" data-bs-scroll="true">Volver al inicio</a></p> </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Práctica Bootstrap</p>
+    </footer>
+</body>
+
+</html>
